@@ -15,6 +15,7 @@ function randomizeColor(block) {
     rgbArray[1] = rgbArray[1] - g;
     rgbArray[2] = rgbArray[2] - b;
     block.style.backgroundColor = `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]})`;
+    block.style.borderColor = block.style.backgroundColor;
 };
 
 function makeGame(howManyBlocks){
