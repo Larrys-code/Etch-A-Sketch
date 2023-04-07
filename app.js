@@ -58,6 +58,10 @@ document.getElementById("gameSizeSlider").oninput = function(){
     makeGame(gameSize);
 };
 
+document.getElementById("clearButton").onclick = function(){
+    makeGame(gameSize);
+};
+
 makeGame(gameSize);
 
 
