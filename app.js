@@ -58,7 +58,7 @@ let blueRatio = 1;
 
 document.getElementById("gameSizeSlider").oninput = function(){
     gameSize = this.value;
-    document.getElementById("gameSizeValue").textContent = this.value;
+    document.getElementById("gameSizeValue").textContent = `${this.value}x${this.value}`;
     makeGame(gameSize);
 };
 

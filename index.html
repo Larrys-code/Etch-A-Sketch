@@ -10,26 +10,30 @@
 <body>
     <div id="menu">
         <div class="container">
-            <p>game size</p>
-            <input type="range" min="1" max="64" value="16" class="slider" id="gameSizeSlider">
-            <label id="gameSizeValue">16</label>
+            <p class="menuTitle">game size</p>
+            <div class="container">
+                <input type="range" min="1" max="64" value="16" class="slider" id="gameSizeSlider">
+                <div>
+                    <label class="valueLabel" id="gameSizeValue">16x16</label>
+                </div>
+            </div>
         </div>
         <div class="container">
-            <p>color ratio</p>
-            <div class="container">
+            <p class="menuTitle">color ratio</p>
+            <div class="container flex">
                 <label>R</label>
                 <input type="range" min="0" max="100" value="0" class="slider" id="redRatioSlider">
-                <label id="redRatioValue">0%</label>
+                <label class="valueLabel" id="redRatioValue">0%</label>
             </div>
-            <div class="container">
+            <div class="container flex">
                 <label>G</label>
                 <input type="range" min="0" max="100" value="0" class="slider" id="greenRatioSlider">
-                <label id="greenRatioValue">0%</label>
+                <label class="valueLabel" id="greenRatioValue">0%</label>
             </div>
-            <div class="container">
+            <div class="container flex">
                 <label>B</label>
                 <input type="range" min="0" max="100" value="0" class="slider" id="blueRatioSlider">
-                <label id="blueRatioValue">0%</label>
+                <label class="valueLabel" id="blueRatioValue">0%</label>
             </div>
         </div>
         <button id="clearButton">clear</button>

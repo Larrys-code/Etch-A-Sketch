@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -14,11 +17,12 @@ body {
 #menu {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 512px;
     width: 256px;
     border-radius: 16px;
     flex: 0 0 auto;
-    padding: 20px;
+    padding: 60px 20px;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
     margin-right: 20px;
 }
@@ -36,6 +40,12 @@ body {
     text-align: center;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .gameRow {
     display: flex;
 }
@@ -46,4 +56,30 @@ body {
     background-color: rgba(255, 255, 255, 0);
     border-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2)
+}
+.menuTitle {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+label {
+    min-width: 39px;
+}
+
+#gameSizeValue {
+    min-width: 44px;
+    flex: 0 0 auto;
+}
+
+.valueLabel {
+    color:rgba(0, 0, 0, 0.616);
+}
+
+#clearButton {
+    margin: 20px 30px;
+    border-radius: 16px;
+    font-size: 20px;
+    padding: 10px;
+    border-style: solid;
+    cursor: pointer;
 }
