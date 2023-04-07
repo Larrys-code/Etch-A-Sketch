@@ -8,9 +8,9 @@ function getRGB(string) {
 
 function randomizeColor(block) {
     const rgbArray = getRGB(block.style.backgroundColor);
-    let r = Math.floor(Math.random() * (50 - 0 + 1) + 0);
-    let g = Math.floor(Math.random() * (50 - 0 + 1) + 0);
-    let b = Math.floor(Math.random() * (50 - 0 + 1) + 0);
+    let r = Math.floor((Math.random() * (50 - 0 + 1) + 0) * redRatio);
+    let g = Math.floor((Math.random() * (50 - 0 + 1) + 0) * greenRatio);
+    let b = Math.floor((Math.random() * (50 - 0 + 1) + 0) * blueRatio);
     rgbArray[0] = rgbArray[0] - r;
     rgbArray[1] = rgbArray[1] - g;
     rgbArray[2] = rgbArray[2] - b;
@@ -51,11 +51,33 @@ function makeGame(howManyBlocks){
 };
 
 let gameSize = 16;
+let redRatio = 1;
+let greenRatio = 1;
+let blueRatio = 1;
+
 
 document.getElementById("gameSizeSlider").oninput = function(){
     gameSize = this.value;
     document.getElementById("gameSizeValue").textContent = this.value;
     makeGame(gameSize);
+};
+
+document.getElementById("redRatioSlider").oninput = function(){
+    let rawRatio = this.value;
+    document.getElementById("redRatioValue").textContent = `${rawRatio}%`;
+    redRatio = 1-(rawRatio/100);
+};
+
+document.getElementById("greenRatioSlider").oninput = function(){
+    let rawRatio = this.value;
+    document.getElementById("greenRatioValue").textContent = `${rawRatio}%`;
+    greenRatio = 1-(rawRatio/100);
+};
+
+document.getElementById("blueRatioSlider").oninput = function(){
+    let rawRatio = this.value;
+    document.getElementById("blueRatioValue").textContent = `${rawRatio}%`;
+    blueRatio = 1-(rawRatio/100);
 };
 
 document.getElementById("clearButton").onclick = function(){
