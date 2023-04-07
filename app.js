@@ -8,13 +8,12 @@ function getRGB(string) {
 
 function randomizeColor(block) {
     const rgbArray = getRGB(block.style.backgroundColor);
-    let r = Math.floor(Math.random() * (25 - 0 + 1) + 0);
-    let g = Math.floor(Math.random() * (25 - 0 + 1) + 0);
-    let b = Math.floor(Math.random() * (25 - 0 + 1) + 0);
+    let r = Math.floor(Math.random() * (50 - 0 + 1) + 0);
+    let g = Math.floor(Math.random() * (50 - 0 + 1) + 0);
+    let b = Math.floor(Math.random() * (50 - 0 + 1) + 0);
     rgbArray[0] = rgbArray[0] - r;
     rgbArray[1] = rgbArray[1] - g;
     rgbArray[2] = rgbArray[2] - b;
-    console.log(block.style.backgroundColor);
     block.style.backgroundColor = `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]})`;
 };
 
@@ -33,16 +32,23 @@ function makeGame(howManyBlocks){
     };
     gameContainer.appendChild(docFrag);
     const rows = document.querySelectorAll(".gameRow");
+    const totalWidth = getComputedStyle(gameContainer).width.replace("px","");
+    console.log(totalWidth)
+    const squareSides = (totalWidth - (howManyBlocks * 2))/howManyBlocks;
     rows.forEach(element => {
         for (i=0; i<howManyBlocks; i++){
             var square = document.createElement("div");
             square.className = "gameBlock";
+            square.style.width = `${squareSides}px`;
+            square.style.height = `${squareSides}px`;
+            square.style.margin = "1px";
             element.appendChild(square);
         };
     });
+    const blocks = document.querySelectorAll(".gameBlock");
+    blocks.forEach(block => {block.addEventListener("mouseover", function(){randomizeColor(this)})});
 };
 
 makeGame(16);
-const blocks = document.querySelectorAll(".gameBlock");
-blocks.forEach(block => {block.addEventListener("mouseover", function(){randomizeColor(this)})});
+
 
