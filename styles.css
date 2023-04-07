@@ -12,6 +12,8 @@ body {
 }
 
 #menu {
+    display: flex;
+    flex-direction: column;
     height: 512px;
     width: 256px;
     border-radius: 16px;
@@ -29,6 +31,9 @@ body {
     justify-content: center;
     align-content: center;
     flex: 0 0 auto;
+}
+.container {
+    text-align: center;
 }
 
 .gameRow {

@@ -50,6 +50,14 @@ function makeGame(howManyBlocks){
     blocks.forEach(block => {block.addEventListener("mouseover", function(){randomizeColor(this)})});
 };
 
-makeGame(16);
+let gameSize = 16;
+
+document.getElementById("gameSizeSlider").oninput = function(){
+    gameSize = this.value;
+    document.getElementById("gameSizeValue").textContent = this.value;
+    makeGame(gameSize);
+};
+
+makeGame(gameSize);
 
 
